@@ -26,15 +26,15 @@ public class Customer {
 	
 	public String statement()
 	{
-		double totalAmount			=0;
-		int frequentRenterPoints	=0;
-		Enumeration rentals			=_rentals.elements();
+		double totalAmount			= 0;
+		int frequentRenterPoints	= 0;
+		Iterator it					= _rentals.iterator();
 		String result				= "Rental Record for " + getName()+"\n";
 		
-		while (rentals.hasMoreElements())
+		while (it.hasNext())
 		{
 			double thisAmount	= 0;
-			Rental each			= (Rental) rentals.nextElement();
+			Rental each			= (Rental) it.next();
 			
 			//determine amounts for each line
 			switch (each.getMovie().getPriceCode())
