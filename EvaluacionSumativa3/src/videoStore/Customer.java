@@ -1,6 +1,7 @@
 package videoStore;
 
 import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.Vector;
 
 public class Customer {
@@ -22,12 +23,13 @@ public class Customer {
 		return _name;
 	}
 	
+	
 	public String statement()
 	{
 		double totalAmount			=0;
 		int frequentRenterPoints	=0;
 		Enumeration rentals			=_rentals.elements();
-		String result				= "Rental Record for" + getName()+"\n";
+		String result				= "Rental Record for " + getName()+"\n";
 		
 		while (rentals.hasMoreElements())
 		{
